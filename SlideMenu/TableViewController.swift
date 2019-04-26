@@ -10,21 +10,21 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var numero = ["1","2","3","4","5","6"]
-    
+    var arrayNomeDasDisciplinas = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        arrayNomeDasDisciplinas.append(CadastroViewController.nomeDaDisciplina)
 
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return numero.count
+        return arrayNomeDasDisciplinas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
-        celula.textLabel?.text = numero[indexPath.row]
+        celula.textLabel?.text = arrayNomeDasDisciplinas[indexPath.row]
         return celula
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

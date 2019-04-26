@@ -63,15 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				A3E7CCF92270CFED00FD4771 /* AppDelegate.swift */,
+				A3BE72E822723B1F00378651 /* TableViewCell.swift */,
+				A3BE72EA22723B4500378651 /* TableViewController.swift */,
+				A3BE72EC2272443E00378651 /* CadastroViewController.swift */,
+				A3BE72F122724CB200378651 /* SemanaCollectionViewCell.swift */,
 				A3E7CCFD2270CFED00FD4771 /* Main.storyboard */,
 				A3E7CD032270CFEE00FD4771 /* Assets.xcassets */,
 				A3E7CD052270CFEE00FD4771 /* LaunchScreen.storyboard */,
 				A3E7CD082270CFEE00FD4771 /* Info.plist */,
 				A3E7CD002270CFED00FD4771 /* SlideMenu.xcdatamodeld */,
-				A3BE72E822723B1F00378651 /* TableViewCell.swift */,
-				A3BE72EA22723B4500378651 /* TableViewController.swift */,
-				A3BE72EC2272443E00378651 /* CadastroViewController.swift */,
-				A3BE72F122724CB200378651 /* SemanaCollectionViewCell.swift */,
 			);
 			path = SlideMenu;
 			sourceTree = "<group>";
@@ -300,6 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SlideMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SlideMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
