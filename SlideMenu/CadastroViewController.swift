@@ -12,19 +12,20 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     @IBOutlet weak var nomeDisciplinaText: UITextField!
-    
     @IBOutlet weak var salaText: UITextField!
     
     @IBOutlet weak var professorText: UITextField!
     @IBOutlet weak var horaPickerView: UIPickerView!
     @IBOutlet weak var semanasCollection: UICollectionView!
-    static var nomeDaDisciplina: String!
+    var horarioString = ""
+    var diaSemanaString = [String]()
     
     
     var dias = ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"]
     var horas = [["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],[":"],["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]]
     
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +38,18 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     @IBAction func saveCadastro(_ sender: UIBarButtonItem) {
-        
+       let indexPaths = semanasCollection.indexPathsForSelectedItems
+        for i in indexPaths!{
+            diaSemanaString.append(dias[i.row])
+        }
+       Disciplina.inserir(nome: nomeDisciplinaText.text!, sala: salaText.text!, professor: professorText.text!, horario: horarioString, diaSemana: diaSemanaString)
+        dismiss(animated: true, completion: nil)
     }
     
     
+    @IBAction func cancelCadastro(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     //-------------------------Funções do CollectionView-----------------------------------------------------
     
@@ -57,9 +66,6 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        //collectionView.allowsMultipleSelection = true
-        print(indexPath.row)
         let celulaAtual = collectionView.cellForItem(at: indexPath)
         celulaAtual?.backgroundColor = UIColor.blue
     }
@@ -68,6 +74,8 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         let celulaAtual = collectionView.cellForItem(at: indexPath)
         celulaAtual?.backgroundColor = UIColor.white
     }
+    
+    
     //-----------------Funções  do PickerView---------------------------------------------------------------------------------------
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -79,6 +87,14 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return horas[component][row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let indexHora = pickerView.selectedRow(inComponent: 0)
+        let indexMinuto = pickerView.selectedRow(inComponent: 2)
+        let hora = horas[0][indexHora]
+        let minuto = horas[2][indexMinuto]
+        horarioString = hora + ":" + minuto
+        print(horarioString)
     }
  
 }
