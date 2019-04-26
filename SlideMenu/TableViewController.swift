@@ -17,10 +17,6 @@ class TableViewController: UITableViewController {
 
 
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return numero.count
