@@ -10,7 +10,6 @@
 		A3BE72E922723B1F00378651 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE72E822723B1F00378651 /* TableViewCell.swift */; };
 		A3BE72EB22723B4500378651 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE72EA22723B4500378651 /* TableViewController.swift */; };
 		A3BE72ED2272443E00378651 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE72EC2272443E00378651 /* CadastroViewController.swift */; };
-		A3BE72F02272455300378651 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3BE72EE2272455300378651 /* Model.xcdatamodeld */; };
 		A3BE72F222724CB200378651 /* SemanaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE72F122724CB200378651 /* SemanaCollectionViewCell.swift */; };
 		A3E7CCFA2270CFED00FD4771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7CCF92270CFED00FD4771 /* AppDelegate.swift */; };
 		A3E7CCFF2270CFED00FD4771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E7CCFD2270CFED00FD4771 /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 		A3BE72E822723B1F00378651 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A3BE72EA22723B4500378651 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A3BE72EC2272443E00378651 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
-		A3BE72EF2272455300378651 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A3BE72F122724CB200378651 /* SemanaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanaCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3E7CCF62270CFED00FD4771 /* SlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E7CCF92270CFED00FD4771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				A3BE72E822723B1F00378651 /* TableViewCell.swift */,
 				A3BE72EA22723B4500378651 /* TableViewController.swift */,
 				A3BE72EC2272443E00378651 /* CadastroViewController.swift */,
-				A3BE72EE2272455300378651 /* Model.xcdatamodeld */,
 				A3BE72F122724CB200378651 /* SemanaCollectionViewCell.swift */,
 			);
 			path = SlideMenu;
@@ -156,7 +153,6 @@
 				A3BE72EB22723B4500378651 /* TableViewController.swift in Sources */,
 				A3BE72ED2272443E00378651 /* CadastroViewController.swift in Sources */,
 				A3E7CD022270CFED00FD4771 /* SlideMenu.xcdatamodeld in Sources */,
-				A3BE72F02272455300378651 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,16 +352,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A3BE72EE2272455300378651 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A3BE72EF2272455300378651 /* Model.xcdatamodel */,
-			);
-			currentVersion = A3BE72EF2272455300378651 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		A3E7CD002270CFED00FD4771 /* SlideMenu.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
