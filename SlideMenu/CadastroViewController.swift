@@ -12,6 +12,9 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     
     @IBOutlet weak var nomeDisciplinaText: UITextField!
+    
+    @IBOutlet weak var salaText: UITextField!
+    
     @IBOutlet weak var professorText: UITextField!
     @IBOutlet weak var horaPickerView: UIPickerView!
     @IBOutlet weak var semanasCollection: UICollectionView!
@@ -31,6 +34,12 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         horaPickerView.delegate = self
         horaPickerView.dataSource = self
     }
+    
+    
+    @IBAction func saveCadastro(_ sender: UIBarButtonItem) {
+        
+    }
+    
     
     
     //-------------------------Funções do CollectionView-----------------------------------------------------

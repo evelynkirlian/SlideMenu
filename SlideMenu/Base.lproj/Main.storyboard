@@ -98,7 +98,11 @@
                                 <items>
                                     <navigationItem title="Cadastro" id="tFE-Ua-I79">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zD2-FQ-VFV"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Vo3-65-OI1"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Vo3-65-OI1">
+                                            <connections>
+                                                <action selector="saveCadastro:" destination="qaF-6E-6d9" id="Acf-Sf-RKi"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -150,9 +154,16 @@
                                 </cells>
                             </collectionView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGA-vw-1GE">
-                                <rect key="frame" x="16" y="185" width="343" height="144"/>
+                                <rect key="frame" x="16" y="243" width="343" height="144"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sala" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iit-MR-FHc">
+                                <rect key="frame" x="16" y="177" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gqX-1e-mth"/>
@@ -161,6 +172,7 @@
                         <outlet property="horaPickerView" destination="dGA-vw-1GE" id="W7F-Rn-cYu"/>
                         <outlet property="nomeDisciplinaText" destination="auW-kd-sHy" id="Sqb-7V-VYB"/>
                         <outlet property="professorText" destination="41D-um-Qsd" id="RpW-7s-1jB"/>
+                        <outlet property="salaText" destination="iit-MR-FHc" id="e8L-Qi-UbD"/>
                         <outlet property="semanasCollection" destination="IA0-bT-fO1" id="kyd-l0-zlO"/>
                     </connections>
                 </viewController>
