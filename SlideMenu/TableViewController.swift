@@ -14,8 +14,6 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayNomeDasDisciplinas.append(CadastroViewController.nomeDaDisciplina)
-
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
