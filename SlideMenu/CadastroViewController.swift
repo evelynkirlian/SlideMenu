@@ -67,12 +67,13 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let celulaAtual = collectionView.cellForItem(at: indexPath)
-        celulaAtual?.backgroundColor = UIColor.blue
+        celulaAtual?.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0.9529411765, blue: 1, alpha: 1)
+        celulaAtual?.layer.cornerRadius = 8
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let celulaAtual = collectionView.cellForItem(at: indexPath)
-        celulaAtual?.backgroundColor = UIColor.white
+        celulaAtual?.backgroundColor = .clear
     }
     
     
