@@ -11,17 +11,23 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var arrayNomeDasDisciplinas = [String]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayNomeDasDisciplinas.count
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let d = Disciplina.searchForAll()
+        return d.count
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
-        celula.textLabel?.text = arrayNomeDasDisciplinas[indexPath.row]
+        let d = Disciplina.buscarTodos()
+        celula.textLabel?.text = d[indexPath.row].nome!
         return celula
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

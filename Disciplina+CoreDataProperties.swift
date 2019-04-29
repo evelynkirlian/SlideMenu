@@ -21,9 +21,9 @@ extension Disciplina {
     @NSManaged public var sala: String?
     @NSManaged public var professor: String?
     @NSManaged public var horario: String?
-    @NSManaged public var diaSemana: [String]?
+    @NSManaged public var diaSemana: String?
 
-    class func inserir(nome: String, sala: String, professor: String, horario: String, diaSemana: [String]){
+    class func inserir(nome: String, sala: String, professor: String, horario: String, diaSemana: String){
         let context = CoreDataManager.persistentContainer.viewContext
         
         let disciplina = Disciplina(context: context)
@@ -33,6 +33,41 @@ extension Disciplina {
         disciplina.horario = horario
         disciplina.diaSemana = diaSemana
         
+        CoreDataManager.saveContext()
+        
+    }
     
+    
+    class func searchForAll () -> [String]{
+        let context = CoreDataManager.persistentContainer.viewContext
+        let request = NSFetchRequest<Disciplina>(entityName: "Disciplina")
+        
+        var arrayNomes: [String] = []
+        
+        do{
+            let disciplinas = try context.fetch(request)
+            
+            for i in disciplinas {
+                var a = i.nome!
+                arrayNomes.append(a)
+            }
+            return arrayNomes
+        }catch{
+            print("Erro ao buscar disciplinas")
+        }
+        return []
+    }
+    
+    
+    class func buscarTodos() -> [Disciplina]{
+        let contexto = CoreDataManager.persistentContainer.viewContext
+        let request = NSFetchRequest<Disciplina>(entityName: "Disciplina")
+        do{
+            let disciplinas = try contexto.fetch(request)
+            return disciplinas
+        }catch{
+            print("Erro ao buscar disciplinas")
+        }
+        return []
     }
 }
