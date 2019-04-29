@@ -34,13 +34,28 @@ class TableViewController: UITableViewController {
         print("Clicou no item \(indexPath.row)")
         performSegue(withIdentifier: "detalhe", sender: self)
         
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detalhe"){
-            
+            guard let second = segue.destination as? DetailsViewController, let indexpath = tableView.indexPathForSelectedRow else{
+                fatalError("Problemas")
         }
+        let d = Disciplina.buscarTodos()
+            second.selectedNome = d[indexpath.row].nome
+            second.selectedProf = d[indexpath.row].professor
+            second.selectedSala = d[indexpath.row].sala
+            second.selectedHorario = d[indexpath.row].horario
+            second.selectedDia = d[indexpath.row].diaSemana
     }
+    }
+
+    
+    
+    
+    
+    
     @IBAction func add(_ sender: Any) {
         performSegue(withIdentifier: "add", sender: self)
     }

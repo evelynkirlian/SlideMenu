@@ -48,7 +48,7 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         dismiss(animated: true, completion: nil)
     }
     
-    //-------------------------Funções do CollectionView-----------------------------------------------------
+    //-------------------------Funções do CollectionView--------------------------------------------------------------------------------
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dias.count
@@ -72,7 +72,7 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         let celulaAtual = collectionView.cellForItem(at: indexPath)
         celulaAtual?.backgroundColor = .clear
     }
-    //-----------------Funções  do PickerView---------------------------------------------------------------------------------------
+    //-----------------Funções  do PickerView------------------------------------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return horas.count
     }
