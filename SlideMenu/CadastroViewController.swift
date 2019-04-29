@@ -31,6 +31,9 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         semanasCollection.allowsMultipleSelection = true
         horaPickerView.delegate = self
         horaPickerView.dataSource = self
+        
+        horaPickerView.backgroundColor = .clear
+        horaPickerView.tintColor = UIColor.white
     }
     
     
@@ -71,6 +74,8 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let celulaAtual = collectionView.cellForItem(at: indexPath)
         celulaAtual?.backgroundColor = .clear
+        
+        
     }
     //-----------------Funções  do PickerView------------------------------------------------------------------------------------
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -84,6 +89,7 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         return horas[component][row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         let indexHora = pickerView.selectedRow(inComponent: 0)
         let indexMinuto = pickerView.selectedRow(inComponent: 2)
         let hora = horas[0][indexHora]
@@ -91,6 +97,13 @@ class CadastroViewController: UIViewController, UICollectionViewDelegate, UIColl
         horarioString = hora + ":" + minuto
         print(horarioString)
     }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let string = horas[component][row]
+        
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+    }
+    
+    
 }
 
 
