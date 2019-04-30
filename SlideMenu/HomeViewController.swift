@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     override func viewWillAppear(_ animated: Bool) {
         listaDisciplinaAtual = filtrarDisciplinas(disciplina: Disciplina.buscarTodos(), data: formattedDate)
         homeTableView.reloadData()
+            homeTableView.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0.9529411765, blue: 1, alpha: 0.2017069777)
     }
     
     func getDayOfWeek(_ today:String) -> String? {
@@ -77,6 +78,9 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
         celula.textLabel?.text = listaDisciplinaAtual[indexPath.row].nome
+        
+        celula.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0.9529411765, blue: 1, alpha: 0.2981592466)
+        
         celula.detailTextLabel?.text = "Horário: \(listaDisciplinaAtual[indexPath.row].horario!)  Sala: \(listaDisciplinaAtual[indexPath.row].sala!)"
         return celula
     }

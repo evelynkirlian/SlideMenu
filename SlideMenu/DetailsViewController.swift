@@ -32,9 +32,14 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nomeDaDisciplinaLabel.text = selectedNome
+        nomeDaDisciplinaLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         nomeProfessorLabel.text = selectedProf
+        nomeProfessorLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         salaLabel.text = selectedSala
+        salaLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         horarioLabel.text = selectedHorario
+        horarioLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         diaSemanaLabel.text = selectedDia
+        diaSemanaLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
 }

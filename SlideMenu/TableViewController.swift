@@ -13,9 +13,11 @@ class TableViewController: UITableViewController {
     var arrayNomeDasDisciplinas = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        
     }
     
     
@@ -25,7 +27,10 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
+        celula.backgroundColor = #colorLiteral(red: 0.8352941176, green: 0.9529411765, blue: 1, alpha: 0.2981592466)
         let d = Disciplina.buscarTodos()
         celula.textLabel?.text = d[indexPath.row].nome!
         return celula
