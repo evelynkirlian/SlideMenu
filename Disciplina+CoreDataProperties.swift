@@ -70,4 +70,35 @@ extension Disciplina {
         }
         return []
     }
+    
+    class func buscarPor(nome: String) -> Disciplina? {
+        
+        let contexto = CoreDataManager.persistentContainer.viewContext
+        let request = NSFetchRequest<Disciplina>(entityName: Disciplina.entity().managedObjectClassName)
+        
+        let predicate = NSPredicate(format: "nome ==[cd] %@", nome)
+        
+        request.predicate = predicate
+        
+        do {
+            let disciplinas = try contexto.fetch(request)
+            
+            return disciplinas.count > 0 ? disciplinas[0]: nil
+            
+        } catch {
+            print("Pessoa: erro ao buscarPor(nome:\(nome).")
+        }
+        
+        return nil
+    }
+    class func remover(nome: String) -> Bool{
+        let context = CoreDataManager.persistentContainer.viewContext
+        let d = Disciplina.buscarPor(nome: nome)
+        if let d = d{
+            context.delete(d)
+            
+            return true
+        }
+        return false
+}
 }
